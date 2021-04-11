@@ -1,7 +1,8 @@
 # Correlation exercise
 
 # Import libraries and dependencies
-import pandas as pdfrom pathlib import pathlib
+import pandas as pd 
+from pathlib import Path
 import seaborn as sns
 %mathplotlib inline
 
@@ -17,7 +18,7 @@ ice_cream_data = Path"../____/ice_cream.csv"
 sns.heatmap(Correlation, vmin=-1, vmax=1)
 
 
-
+pd
 
 
 
@@ -43,10 +44,10 @@ nflx_data = Path("../Resources/nflx.csv")
 nflx_df = pd.read_csv(nflx_data, index_col="date", infer_datetime_format=True, parse_dates=True)
 nflx_df.sort_index()  #sort index
 nflx_df.plot() # plot data frame
-
+nflx_df.plot(type=Scatter)**** #Create a scatter plot
 
 # set figure of the daily closing prices of NFLX
-axie = nflx_df.plt(figsize(25,10))
+axie = nflx_df.plot(figsize(25,10))
 
 
 
@@ -58,15 +59,15 @@ axie = nflx_df.plt(figsize(25,10))
 #read CSVs in the dataframs
 
 #Calculate covariance of all daily retursn of AMZon vs. S&P 500
-covariance = daily_retruns['AMZN'].cov(daily_returns['S&P 500'])
+covariance = daily_retuns['AMZN'].cov(daily_returns['S&P 500'])
 covariance
 
 # calculate vaiance of all retursn of AMZOn vs. S&P 500
-variance = dailiy_returns['S&P 500']
+variance = dailiy_returns['S&P 500']***
 
 
 # Calc. 30-day rolling beta of amzn and plot the data
-rolling_beta = rolling_covarince / rolling_variance
+rolling_beta = rolling_covarince / rolling_variance***
 rolling_beta.plot(figsize=(20, 100)
                   
 # Beta vs. Correlation
@@ -111,7 +112,7 @@ portfolio_retruns.head()
 
 #Import pandas & dependencies 
 import pandas as pd
-import pathlib as Path
+from pathlib as Path
 
 
 # import CSVs

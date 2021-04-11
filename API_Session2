@@ -1,0 +1,84 @@
+
+#API Keys
+#	Why use them?
+#	Monitor uses
+#	How to monitor security of API keys?
+#	Multi-factor authentication
+	
+
+#Environment Variables
+#	Better environment variables for enhanced security so others can’t use your keys
+#	.env file in separate file
+#Calling Envionment Variables
+#	Api_key = os.genenv()
+
+
+ 
+##Instructor Demo: environment variables
+# Import dotenv package for settin env. Variables
+From dotenv import load_dotenv
+
+# Import os package
+Import os
+
+Api_key = os.getenv()
+_____
+
+
+## Instructor demo 2: Alpaca demo
+# Initial imports
+import osimport requests
+import pandas as pd
+from dotenv import load_dotenv
+import alpaca_trade_api as trade_api
+
+#load .env environment variables
+load_dotenv()
+
+# set alpaca api key and secret
+alpaca_api_key = os.getenv("ALPACA_API_KEY")
+alpaca_secret_key = os.getenv("ALPACA_SECRET_KEY")
+
+#Verify that Alpaca key and secret were correctly loaded
+print(f"Alpaca key type: {ALPACA_API_KEY})
+print(f"Alpaca Secret key type: {ALPACA_SECRET_KEY})
+
+#Create the Alpaca API object
+alpaca = tradeapi.REST(alpaca_api_key, alpaca_secret_key, api_version="v2")
+
+#Format current date as ISO format
+today = pd.Timestamp("2021-04-08", tz="America/New_York").isoformat()
+
+#Set the tickers
+tickers = ["FB", "TWTR"]
+
+#Set timeframe to one day ('1D') for the Alpaca API
+timeframe = "1D"
+
+#Get current closing prices for FB and TWTR
+df_portfolio = alpaca.get_barset(
+    tickers,
+    timeframe,
+    start = today,
+    end = today,
+).df
+
+# Display sample data
+df_portfolio
+
+#Format start and end dates as ISO format for one year period
+start= _____
+end=_____
+
+
+#Create and empty DataFrame for closing prices
+df_closing_prices = pd.dataFrame()
+#Fetch the closing prices of FB and TWTR
+df_closing_price["FB"] = df_portfolio_year["FB"]["close"]
+
+
+# _____
+
+
+# Compute daily returns
+df_daily_returns
